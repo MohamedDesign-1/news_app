@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/widgets/category_cards.dart';
 
 class NewsHomePage extends StatelessWidget {
   static const String routeName = 'HomeScreen';
@@ -8,7 +9,7 @@ class NewsHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -24,6 +25,11 @@ class NewsHomePage extends StatelessWidget {
         ],
       ),
     ),
+    body:Column(
+      children: [
+        CategoryCards(imageAsset: 'assets/images/business.avif', titleOfCard: 'Business')
+        ],
+      ),
     );
   }
 }
