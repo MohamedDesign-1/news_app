@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/widgets/category_cards.dart';
+import 'package:newsapp/widgets/categorys_list_view.dart';
 
 class NewsHomePage extends StatelessWidget {
   static const String routeName = 'HomeScreen';
@@ -25,11 +25,7 @@ class NewsHomePage extends StatelessWidget {
         ],
       ),
     ),
-    body:Column(
-      children: [
-        CategoryCards(imageAsset: 'assets/images/business.avif', titleOfCard: 'Business')
-        ],
-      ),
+    body: const CategorysListView() ,
     );
   }
 }
