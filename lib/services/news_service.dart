@@ -1,11 +1,36 @@
 import 'package:dio/dio.dart';
+import 'package:newsapp/models/article_model.dart';
 
 class NewsService{
   final dio = Dio();
 
+  NewsService(Dio dio);
+
   void getGeneralNews() async {
     final response = await dio.get(
-        'https://newsapi.org/v2/everything?q=bitcoin&apiKey=41bd20a3903f4af7b134153dcd56c209');
+        'https://newsapi.org/v2/top-headlines?country=eg&category=general&apiKey=41bd20a3903f4af7b134153dcd56c209');
     print(response);
+  }
+
+
+  getNews() async{
+    var response = await dio.get(
+    'https://newsapi.org/v2/top-headlines?country=eg&category=general&apiKey=41bd20a3903f4af7b134153dcd56c209'
+    );
+    Map < String, dynamic> jsonData = response.data ;
+    List<dynamic>  articles = jsonData ['articles'];
+
+    List<ArticleModel> articlList = [];
+
+    for (var article in articles){
+      ArticleModel articleModel = ArticleModel(
+      image: article['urlToImage'],
+      title: article ['title'],
+      subTitle: article['description']
+      );
+      articlList.add(articleModel);
+    }
+    
+    print(articlList);
   }
 }
