@@ -13,7 +13,8 @@ class NewsTile extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: Image.network(
-            articleModel.image!,
+            articleModel.image ??
+            'https://images.unsplash.com/photo-1546422904-90eab23c3d7e?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             height: 200,
             width: double.infinity,
             fit: BoxFit.cover,
@@ -36,7 +37,7 @@ class NewsTile extends StatelessWidget {
           height: 16,
         ),
         Text(
-          articleModel.subTitle!,
+          articleModel.subTitle ?? 'وصف',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
