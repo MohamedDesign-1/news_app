@@ -30,7 +30,7 @@ class NewsTile extends StatelessWidget {
           ),
           overflow: TextOverflow.ellipsis,
           maxLines: 2,
-          textDirection: TextDirection.rtl,
+          textDirection: TextDirection.ltr,
         ),
         SizedBox(
           height: 16,
@@ -44,7 +44,7 @@ class NewsTile extends StatelessWidget {
           ),
           overflow: TextOverflow.ellipsis,
           maxLines: 3,
-          textDirection: TextDirection.rtl,
+          textDirection: TextDirection.ltr,
         ),
       ],
     );
